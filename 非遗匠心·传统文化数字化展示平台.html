@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>非遗匠心·传统文化数字化展示平台</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Microsoft YaHei", sans-serif;
+			}
+
+			:root {
+				--primary: #8B4513;
+				--secondary: #D2B48C;
+				--dark: #333;
+				--light: #fff;
+				--gray: #f5f5f5;
+			}
+
+			body {
+				line-height: 1.6;
+				color: var(--dark);
+				background: var(--gray);
+			}
+
+			.navbar {
+				background: var(--primary);
+				padding: 15px 0;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.container {
+				width: 90%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.nav-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				color: var(--light);
+				font-size: 24px;
+				font-weight: bold;
+			}
+
+			.nav-menu {
+				display: flex;
+				list-style: none;
+			}
+
+			.nav-menu li {
+				margin-left: 30px;
+			}
+
+			.nav-menu a {
+				color: var(--light);
+				text-decoration: none;
+				font-size: 16px;
+				transition: 0.3s;
+			}
+
+			.nav-menu a:hover {
+				color: var(--secondary);
+			}
+
+			/* ———— 轮播图样式 ———— */
+			.swiper {
+				width: 100%;
+				height: 500px;
+				--swiper-theme-color: #fff;
+			}
+			.swiper-slide {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				color: #fff;
+				font-size: 22px;
+				text-align: center;
+			}
+			.swiper-slide img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.swiper-slide .title {
+				position: absolute;
+				bottom: 60px;
+				left: 0;
+				right: 0;
+				font-size: 36px;
+				font-weight: bold;
+				text-shadow: 0 0 10px rgba(0,0,0,0.5);
+			}
+			.swiper-button-next, .swiper-button-prev {
+				color: #fff !important;
+			}
+
+			.btn {
+				display: inline-block;
+				padding: 12px 30px;
+				background: var(--primary);
+				color: var(--light);
+				text-decoration: none;
+				border-radius: 5px;
+				transition: 0.3s;
+			}
+
+			.btn:hover {
+				background: #6d3510;
+			}
+
+			.section-title {
+				text-align: center;
+				margin: 50px 0;
+				font-size: 32px;
+				color: var(--primary);
+				position: relative;
+			}
+
+			.section-title::after {
+				content: '';
+				width: 80px;
+				height: 3px;
+				background: var(--secondary);
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.heritage,
+			.digital,
+			.craftsman,
+			.news {
+				padding: 50px 0;
+				background: var(--light);
+			}
+
+			.card-box {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+				gap: 30px;
+			}
+
+			.card {
+				background: var(--light);
+				border-radius: 10px;
+				overflow: hidden;
+				box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+				transition: 0.3s;
+			}
+
+			.card:hover {
+				transform: translateY(-5px);
+			}
+
+			.card img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+			}
+
+			.card-body {
+				padding: 20px;
+			}
+
+			.card-title {
+				font-size: 20px;
+				margin-bottom: 10px;
+				color: var(--primary);
+			}
+
+			.card-text {
+				color: #666;
+				font-size: 14px;
+			}
+
+			.footer {
+				background: var(--primary);
+				color: var(--light);
+				text-align: center;
+				padding: 30px 0;
+				margin-top: 50px;
+			}
+		</style>
+
+		<!-- 引入轮播图CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container nav-container">
+				<div class="logo">非遗匠心</div>
+				<ul class="nav-menu">
+					<li><a href="#">首页</a></li>
+					<li><a href="非遗项目展示.html">非遗展示</a></li>
+					<li><a href="数字展厅.html">数字展厅</a></li>
+					<li><a href="匠心传承.html">匠心传承</a></li>
+					<li><a href="新闻资讯.html">新闻资讯</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- ———— 12种非遗 轮播图 ———— -->
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="img/京剧.webp" alt="京剧">
+					<div class="title">京剧 · 国粹经典</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/剪纸.png" alt="剪纸">
+					<div class="title">剪纸 · 民间艺术</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/陶艺.jpg" alt="龙泉青瓷">
+					<div class="title">龙泉青瓷 · 千年瓷韵</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/中国书法.webp" alt="中国书法">
+					<div class="title">中国书法 · 笔墨丹青</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/苏绣.webp" alt="苏绣">
+					<div class="title">苏绣 · 针尖艺术</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/皮影戏.webp" alt="皮影戏">
+					<div class="title">皮影戏 · 光影传奇</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/昆曲.jpg" alt="昆曲">
+					<div class="title">昆曲 · 百戏之祖</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/传统茶艺.jpg" alt="西湖龙井">
+					<div class="title">西湖龙井 · 茶香非遗</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/木版年画.jpg" alt="木版年画">
+					<div class="title">木版年画 · 民俗传承</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/中医针灸.jpg" alt="中医针灸">
+					<div class="title">中医针灸 · 养生国粹</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/古琴.jpg" alt="古琴">
+					<div class="title">古琴 · 雅乐千年</div>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/舞龙舞狮.jpg" alt="醒狮">
+					<div class="title">醒狮 · 龙腾狮跃</div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+
+		<section class="heritage">
+			<div class="container">
+				<h2 class="section-title">非遗项目展示</h2>
+				<div class="card-box">
+					<a href="京剧.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/京剧.webp" alt="京剧">
+						<div class="card-body">
+							<h3 class="card-title">京剧</h3>
+							<p class="card-text">中国国粹，被誉为“国剧”，集唱、念、做、打于一体的传统戏剧。</p>
+						</div>
+					</a>
+					<a href="剪纸.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/剪纸.png" alt="剪纸">
+						<div class="card-body">
+							<h3 class="card-title">剪纸</h3>
+							<p class="card-text">用剪刀或刻刀在纸上剪刻花纹，用于装点生活的民间艺术。</p>
+						</div>
+					</a>
+					<a href="传统陶艺.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/陶艺.jpg" alt="陶艺">
+						<div class="card-body">
+							<h3 class="card-title">传统陶艺</h3>
+							<p class="card-text">以手工捏制、烧制而成的传统工艺，承载千年文化底蕴。</p>
+						</div>
+					</a>
+					<a href="中国书法.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/中国书法.webp" alt="书法">
+						<div class="card-body">
+							<h3 class="card-title">中国书法</h3>
+							<p class="card-text">以汉字为载体，笔墨纸砚为工具的传统艺术瑰宝。</p>
+						</div>
+					</a>
+					<a href="苏绣.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/苏绣.webp" alt="苏绣">
+						<div class="card-body">
+							<h3 class="card-title">苏绣</h3>
+							<p class="card-text">中国四大名绣之首，针法精细、色彩雅致，被誉为针尖上的艺术。</p>
+						</div>
+					</a>
+					<a href="皮影戏.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/皮影戏.webp" alt="皮影戏">
+						<div class="card-body">
+							<h3 class="card-title">皮影戏</h3>
+							<p class="card-text">灯光兽皮映出人物故事，是中国最早的戏曲艺术之一。</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="digital">
+			<div class="container">
+				<h2 class="section-title">数字展厅</h2>
+				<div class="card-box">
+					<a href="数字展厅.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/中国非遗数字博物馆.webp" alt="VR非遗展示">
+						<div class="card-body">
+							<h3 class="card-title">VR非遗展示</h3>
+							<p class="card-text">沉浸式体验非遗制作全过程，感受传统工艺的魅力与乐趣。</p>
+						</div>
+					</a>
+					<a href="非遗短视频与微纪录片展播.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/非遗短视频与微纪录片.png" alt="非遗短视频与微纪录片">
+						<div class="card-body">
+							<h3 class="card-title">非遗短视频与微纪录片</h3>
+							<p class="card-text">用镜头记录非遗之美，让非遗文化触手可及，生动有趣。</p>
+						</div>
+					</a>
+					<a href="融合案例.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/非遗现代融合案例.png" alt="非遗与现代化融合案例">
+						<div class="card-body">
+							<h3 class="card-title">非遗与现代化融合案例</h3>
+							<p class="card-text">展示非遗在现代设计、科技、文旅等领域的创新应用案例。</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="craftsman">
+			<div class="container">
+				<h2 class="section-title">匠心传承</h2>
+				<div class="card-box">
+					<a href="传承人报告.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/非遗专题报告图.png" alt="非遗传承人专题报告">
+						<div class="card-body">
+							<h3 class="card-title">非遗传承人专题报告</h3>
+							<p class="card-text">深度访谈非遗传承人，记录他们的技艺人生与坚守故事。</p>
+						</div>
+					</a>
+					<a href="线上教学.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/非遗线上教学.png" alt="非遗线上体验教学">
+						<div class="card-body">
+							<h3 class="card-title">非遗线上体验教学</h3>
+							<p class="card-text">非遗传承人亲自授课，提供高清视频课程，足不出户学习传统技艺。</p>
+						</div>
+					</a>
+					<a href="文创产品.html" class="card" style="text-decoration: none; color: inherit;">
+						<img src="img/非遗文创推广.png" alt="非遗文创产品展示与推广">
+						<div class="card-body">
+							<h3 class="card-title">非遗文创产品展示与推广</h3>
+							<p class="card-text">汇聚全国优秀非遗文创产品，搭建展示与推广平台。</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="news">
+			<div class="container">
+				<h2 class="section-title">新闻资讯</h2>
+				<div class="card-box">
+					<a href="#" class="card" style="text-decoration: none; color: inherit;">
+						<div class="card-body">
+							<h3 class="card-title">2026非遗文化节圆满举办</h3>
+							<p class="card-text">时间：2026-03-30</p>
+							<p class="card-text">本届非遗文化节吸引全国200余项非遗项目参展，线上线下联动传播传统文化。</p>
+						</div>
+					</a>
+					<a href="#" class="card" style="text-decoration: none; color: inherit;">
+						<div class="card-body">
+							<h3 class="card-title">数字化赋能非遗传承</h3>
+							<p class="card-text">时间：2026-03-20</p>
+							<p class="card-text">数字技术让非遗文化走出博物馆，走进大众生活，实现活态传承与创新发展。</p>
+						</div>
+					</a>
+					<a href="#" class="card" style="text-decoration: none; color: inherit;">
+						<div class="card-body">
+							<h3 class="card-title">非遗线上课程正式上线</h3>
+							<p class="card-text">时间：2026-04-01</p>
+							<p class="card-text">平台推出12门非遗直播教学课程，国家级传承人在线授课，助力全民学习非遗技艺。</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="container">
+				<p>非遗匠心·传统文化数字化展示平台 © 2026 版权所有</p>
+				<p>传承中华优秀传统文化 · 推动非遗数字化保护与传播</p>
+			</div>
+		</footer>
+
+		<!-- 轮播图JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script>
+			var swiper = new Swiper(".mySwiper", {
+				loop: true,
+				autoplay: {
+					delay: 3000,
+					disableOnInteraction: false,
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+			});
+		</script>
+	</body>
+</html>
