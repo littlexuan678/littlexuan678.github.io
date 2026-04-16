@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>非遗传承人专题报告 - 非遗匠心展示平台</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Microsoft YaHei", sans-serif;
+			}
+
+			:root {
+				--primary: #8B4513;
+				--secondary: #D2B48C;
+				--dark: #333;
+				--light: #fff;
+				--gray: #f5f5f5;
+			}
+
+			body {
+				line-height: 1.6;
+				color: var(--dark);
+				background: var(--gray);
+			}
+
+			.navbar {
+				background: var(--primary);
+				padding: 15px 0;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.container {
+				width: 90%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.nav-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				color: var(--light);
+				font-size: 24px;
+				font-weight: bold;
+			}
+
+			.nav-menu {
+				display: flex;
+				list-style: none;
+			}
+
+			.nav-menu li {
+				margin-left: 30px;
+			}
+
+			.nav-menu a {
+				color: var(--light);
+				text-decoration: none;
+				font-size: 16px;
+				transition: 0.3s;
+			}
+
+			.nav-menu a:hover {
+				color: var(--secondary);
+			}
+
+			.header {
+				padding: 60px 0;
+				text-align: center;
+				background: var(--light);
+			}
+
+			.header h1 {
+				font-size: 36px;
+				color: var(--primary);
+				margin-bottom: 15px;
+			}
+
+			.header p {
+				font-size: 18px;
+				color: #555;
+			}
+
+			.section-title {
+				text-align: center;
+				margin: 50px 0 30px;
+				font-size: 32px;
+				color: var(--primary);
+				position: relative;
+			}
+
+			.section-title::after {
+				content: '';
+				width: 80px;
+				height: 3px;
+				background: var(--secondary);
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.report-card {
+				background: var(--light);
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				margin-bottom: 40px;
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			/* 统一图片容器大小，匹配提供图片的960×1360比例，固定为360×510 */
+			.report-card-img {
+				flex: 1;
+				min-width: 360px;
+				width: 360px;
+				height: 510px;
+				overflow: hidden;
+			}
+
+			/* 统一图片填充方式，不变形 */
+			.report-card-img img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			.report-card-body {
+				flex: 2;
+				min-width: 360px;
+				padding: 40px;
+			}
+
+			.report-card-title {
+				font-size: 28px;
+				color: var(--primary);
+				margin-bottom: 15px;
+			}
+
+			.report-card-subtitle {
+				font-size: 18px;
+				color: #666;
+				margin-bottom: 25px;
+				font-weight: 500;
+			}
+
+			.report-card-text {
+				color: #555;
+				font-size: 16px;
+				line-height: 1.9;
+				margin-bottom: 18px;
+				text-align: justify;
+			}
+			
+			/* 返回上一页按钮 */
+			.back-btn {
+				text-align: center;
+				margin: 20px 0 60px;
+			}
+			.back-btn button {
+				padding: 12px 35px;
+				background: var(--primary);
+				color: #fff;
+				border: none;
+				border-radius: 8px;
+				font-size: 16px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			.back-btn button:hover {
+				background: var(--secondary);
+				color: #333;
+			}
+
+			.footer {
+				background: var(--primary);
+				color: var(--light);
+				text-align: center;
+				padding: 30px 0;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container nav-container">
+				<div class="logo">非遗匠心</div>
+				<ul class="nav-menu">
+					<li><a href="非遗匠心·传统文化数字化展示平台.html">首页</a></li>
+					<li><a href="非遗项目展示.html">非遗展示</a></li>
+					<li><a href="数字展厅.html">数字展厅</a></li>
+					<li><a href="匠心传承.html">匠心传承</a></li>
+					<li><a href="新闻资讯.html">新闻资讯</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="header">
+			<div class="container">
+				<h1>非遗传承人专题报告</h1>
+				<p>聆听匠人的故事，感受坚守的力量，传承千年的技艺</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<!-- 1. 京剧 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/尚长荣.webp" alt="京剧传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">尚长荣：京剧花脸艺术泰斗</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产京剧项目代表性传承人</p>
+					<p class="report-card-text">尚长荣是国家级非遗京剧代表性传承人，工铜锤花脸、架子花脸，是当代京剧艺术界的泰斗级人物。他出身梨园世家，自幼随父学艺，精研京剧表演艺术七十余载，塑造了曹操、包拯、项羽等无数经典艺术形象，表演刚柔并济、声情并茂，将京剧花脸艺术推向了新的高峰。</p>
+					<p class="report-card-text">他深耕舞台传承与艺术创新，推动京剧经典剧目复排与年轻化传播，长期致力于京剧艺术普及教育，创办传习所、走进校园授课，为京剧艺术的传承与发展作出了卓越贡献，被誉为“当代京剧花脸第一人”。</p>
+				</div>
+			</div>
+
+			<!-- 2. 剪纸 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/段建珺.jpg" alt="剪纸传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">段建珺：和林格尔剪纸传承人</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产剪纸项目代表性传承人</p>
+					<p class="report-card-text">段建珺是国家级非遗和林格尔剪纸代表性传承人，深耕剪纸艺术四十余年，是中国北方草原剪纸的领军人物。他继承并发展了北方草原剪纸粗犷质朴、雄浑大气的艺术风格，作品融合蒙古族文化与草原风情，线条灵动、造型饱满，极具艺术感染力与民族特色。</p>
+					<p class="report-card-text">他建立剪纸传承基地，开展公益教学与校园传承，培养大批剪纸人才，推动剪纸艺术走向全国、走向世界，让古老的民间剪纸艺术焕发新生，用一把剪刀守护着草原民族的文化根脉。</p>
+				</div>
+			</div>
+
+			<!-- 3. 陶艺 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/徐朝兴.jpg" alt="陶艺传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">徐朝兴：龙泉青瓷泰斗</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产龙泉青瓷烧制技艺代表性传承人</p>
+					<p class="report-card-text">徐朝兴是国家级非遗龙泉青瓷烧制技艺代表性传承人，从事青瓷艺术八十余年，是当代龙泉青瓷的领军人物。他精通青瓷配釉、拉坯、烧制全流程，复原了多项失传的青瓷烧制工艺，独创“跳刀纹”“哥弟结合”等经典技法，作品温润如玉、造型典雅，尽显青瓷之美。</p>
+					<p class="report-card-text">他坚守传统技艺并大胆创新，作品兼具古典韵味与现代审美，长期致力于青瓷技艺传承与人才培养，创办工作室、收徒传艺，让千年龙泉青瓷技艺薪火相传，让青瓷文化走向世界舞台。</p>
+				</div>
+			</div>
+
+			<!-- 4. 书法 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/欧阳中石.webp" alt="书法传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">欧阳中石：中国书法教育奠基人</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产中国书法代表性传承人</p>
+					<p class="report-card-text">欧阳中石是国家级非遗中国书法代表性传承人，精通楷、行、草、隶、篆诸体，书法风格端庄秀雅、底蕴深厚，笔力雄健、气韵生动。他是中国书法高等教育的奠基人，构建了完整的书法教育体系，开创了书法专业高等教育的先河。</p>
+					<p class="report-card-text">他毕生致力于书法教学、研究与传承，深耕书法公益传播，让书法艺术走进校园、走进大众，守护中华汉字文化根脉，为中国书法事业的传承与发展作出了不可磨灭的贡献。</p>
+				</div>
+			</div>
+
+			<!-- 5. 苏绣 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/姚建萍.webp" alt="苏绣传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">姚建萍：苏绣艺术大师</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产苏绣项目代表性传承人</p>
+					<p class="report-card-text">姚建萍是国家级非遗苏绣代表性传承人，专攻苏绣艺术四十余年，创新融合多种苏绣针法，独创“融针绣”技法，作品细腻逼真、意境悠远，被誉为“苏绣皇后”。她创作的多幅国礼级作品被多国元首收藏，成为中国文化外交的重要载体。</p>
+					<p class="report-card-text">她打破传统苏绣局限，推动苏绣与现代设计、文创产业结合，建立传承工作室培养青年人才，让苏绣这一江南绝技走向世界舞台，用一根丝线传承千年匠心。</p>
+				</div>
+			</div>
+
+			<!-- 6. 皮影戏 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/范正安.webp" alt="皮影戏传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">范正安：泰山皮影戏传承人</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产皮影戏项目代表性传承人</p>
+					<p class="report-card-text">范正安是国家级非遗泰山皮影戏代表性传承人，精通皮影雕刻、操纵、唱腔、配乐全套技艺，独创“十不闲”绝技，一人独立完成整场皮影戏演出，一人顶一个剧团，被誉为“泰山皮影活化石”。</p>
+					<p class="report-card-text">他坚守皮影戏传统艺术，创新改编现代剧目，常年开展进校园、进社区公益演出，让皮影戏这门古老的光影艺术被新一代人熟知与喜爱，用双手守护着泰山皮影的千年传承。</p>
+				</div>
+			</div>
+
+			<!-- 7. 昆曲 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/王芳.webp" alt="昆曲传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">王芳：昆曲表演艺术家</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产昆曲项目代表性传承人</p>
+					<p class="report-card-text">王芳是国家级非遗昆曲代表性传承人，工闺门旦、五旦，昆曲表演技艺精湛，唱腔婉转柔美、身段优雅灵动，演绎《牡丹亭》《长生殿》等经典剧目出神入化，斩获中国戏剧梅花奖、文华奖等多项戏曲界大奖，是当代昆曲表演的领军人物。</p>
+					<p class="report-card-text">她深耕昆曲舞台表演与传承教学，推动昆曲年轻化、大众化传播，让“百戏之祖”昆曲在新时代优雅绽放，用一生守护着昆曲这一古典艺术的瑰宝。</p>
+				</div>
+			</div>
+
+			<!-- 8. 茶艺 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/樊生华.jpg" alt="茶艺传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">樊生华：西湖龙井茶艺传承人</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产西湖龙井采摘和制作技艺代表性传承人</p>
+					<p class="report-card-text">樊生华是国家级非遗西湖龙井采摘和制作技艺代表性传承人，从事龙井茶制作六十余年，精通杀青、辉锅、分拣等全手工制茶工艺，坚守古法技艺不妥协，被誉为“西湖龙井炒制大师”。他炒制的茶叶外形扁平光滑、香气清高持久，尽显西湖龙井的独特韵味。</p>
+					<p class="report-card-text">他致力于龙井茶技艺传承与茶文化传播，开展手工制茶教学，走进校园、社区传授制茶技艺，让西湖龙井这一国茶技艺与茶道文化代代传承，守护着西湖龙井的百年匠心。</p>
+				</div>
+			</div>
+
+			<!-- 9. 木版年画 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/杨洛书.png" alt="木版年画传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">杨洛书：杨家埠木版年画大师</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产杨家埠木版年画项目代表性传承人</p>
+					<p class="report-card-text">杨洛书是国家级非遗杨家埠木版年画代表性传承人，从事木版年画制作八十余年，精通画稿、刻版、套色、印刷全套传统工艺，被誉为“年画王”。他收藏复刻大量绝版年画，保存了杨家埠年画的完整技艺体系，作品色彩浓烈、寓意吉祥，充满浓郁的民俗气息。</p>
+					<p class="report-card-text">他坚持手工刻版印刷，同时创新年画题材，让年画走进现代家居，推动木版年画进校园、出国门，让这一承载民俗年味的艺术代代相传，用木版守护着中国年的文化记忆。</p>
+				</div>
+			</div>
+
+			<!-- 10. 中医针灸 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/石学敏.webp" alt="中医针灸传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">石学敏：中医针灸泰斗</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产中医针灸代表性传承人</p>
+					<p class="report-card-text">石学敏是国家级非遗中医针灸代表性传承人，中国工程院院士，深耕针灸临床、教学、科研六十余年，创立“醒脑开窍”针刺法，在针灸治疗脑病领域享誉世界，开创了针灸治疗中风的新纪元。他手法精准、疗效显著，被誉为“中国针灸第一人”。</p>
+					<p class="report-card-text">他培养海内外针灸人才，推动中医针灸国际化传播，让非遗针灸技艺守护百姓健康，弘扬中华传统医学，让中医针灸走向世界舞台，守护着中医针灸的千年传承。</p>
+				</div>
+			</div>
+
+			<!-- 11. 古琴 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/李祥霆.jpg" alt="古琴传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">李祥霆：古琴艺术大师</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产古琴艺术代表性传承人</p>
+					<p class="report-card-text">李祥霆是国家级非遗古琴艺术代表性传承人，师从古琴大师查阜西，精通古琴演奏、斫制与琴学理论，演奏风格清和淡雅、意境深远，被誉为“当代古琴第一人”。他首创古琴即兴演奏，让古琴艺术焕发新的生命力，多次在全球举办古琴音乐会，传播中国古琴文化。</p>
+					<p class="report-card-text">他致力于古琴艺术传承与普及，出版琴学著作、开展全球古琴演出与教学，让千年古琴雅乐重回当代生活，守护着中华古琴的千年文脉。</p>
+				</div>
+			</div>
+
+			<!-- 12. 舞龙舞狮 -->
+			<div class="report-card">
+				<div class="report-card-img">
+					<img src="img/黄钦添.webp" alt="舞龙舞狮传承人">
+				</div>
+				<div class="report-card-body">
+					<h3 class="report-card-title">黄钦添：醒狮项目代表性传承人</h3>
+					<p class="report-card-subtitle">国家级非物质文化遗产醒狮项目代表性传承人</p>
+					<p class="report-card-text">黄钦添是国家级非遗醒狮（舞狮）代表性传承人，精通南狮表演、武术套路与狮艺编排，带领黄飞鸿狮艺武术馆团队将醒狮技艺演绎得刚劲威武、形神兼备，多次在国际醒狮大赛中斩获冠军，被誉为“南狮王”。</p>
+					<p class="report-card-text">他致力于醒狮技艺传承与青少年培养，推动醒狮文化走向世界，让龙腾狮跃的民俗艺术与精神代代传承，用醒狮精神守护着中华民俗文化的根脉。</p>
+				</div>
+			</div>
+
+		</div>
+		
+		<!-- 返回上一页 -->
+			<div class="back-btn">
+				<button onclick="history.back()">← 返回上一页</button>
+			</div>
+		</div>
+		
+
+		<footer class="footer">
+			<div class="container">
+				<p>非遗匠心·传统文化数字化展示平台 © 2026 版权所有</p>
+				<p>传承中华优秀传统文化 · 推动非遗数字化保护与传播</p>
+			</div>
+		</footer>
+	</body>
+</html>

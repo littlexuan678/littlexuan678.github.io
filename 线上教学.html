@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>非遗线上体验教学 - 非遗匠心展示平台</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Microsoft YaHei", sans-serif;
+			}
+
+			:root {
+				--primary: #8B4513;
+				--secondary: #D2B48C;
+				--dark: #333;
+				--light: #fff;
+				--gray: #f5f5f5;
+			}
+
+			body {
+				line-height: 1.6;
+				color: var(--dark);
+				background: var(--gray);
+			}
+
+			.navbar {
+				background: var(--primary);
+				padding: 15px 0;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.container {
+				width: 90%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.nav-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				color: var(--light);
+				font-size: 24px;
+				font-weight: bold;
+			}
+
+			.nav-menu {
+				display: flex;
+				list-style: none;
+			}
+
+			.nav-menu li {
+				margin-left: 30px;
+			}
+
+			.nav-menu a {
+				color: var(--light);
+				text-decoration: none;
+				font-size: 16px;
+				transition: 0.3s;
+			}
+
+			.nav-menu a:hover {
+				color: var(--secondary);
+			}
+
+			.header {
+				padding: 60px 0;
+				text-align: center;
+				background: var(--light);
+			}
+
+			.header h1 {
+				font-size: 36px;
+				color: var(--primary);
+				margin-bottom: 15px;
+			}
+
+			.header p {
+				font-size: 18px;
+				color: #555;
+			}
+
+			.section-title {
+				text-align: center;
+				margin: 50px 0 30px;
+				font-size: 32px;
+				color: var(--primary);
+				position: relative;
+			}
+
+			.section-title::after {
+				content: '';
+				width: 80px;
+				height: 3px;
+				background: var(--secondary);
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.course-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+				gap: 30px;
+				margin-bottom: 50px;
+			}
+
+			.course-card {
+				background: var(--light);
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				transition: 0.3s;
+			}
+
+			.course-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.course-card img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				display: block;
+			}
+
+			.course-card-body {
+				padding: 20px;
+			}
+
+			.course-card-title {
+				font-size: 18px;
+				color: var(--primary);
+				margin-bottom: 10px;
+			}
+
+			.course-card-teacher {
+				font-size: 14px;
+				color: #666;
+				margin-bottom: 10px;
+			}
+
+			.course-card-text {
+				color: #666;
+				font-size: 14px;
+				margin-bottom: 15px;
+				line-height: 1.5;
+			}
+
+			.course-card-btn {
+				display: inline-block;
+				padding: 8px 15px;
+				background: var(--primary);
+				color: var(--light);
+				text-decoration: none;
+				border-radius: 5px;
+				font-size: 14px;
+				transition: 0.3s;
+        cursor: pointer;
+			}
+
+			.course-card-btn:hover {
+				background: #6d3510;
+			}
+			
+			/* 返回上一页按钮 */
+			.back-btn {
+				text-align: center;
+				margin: 20px 0 60px;
+			}
+			.back-btn button {
+				padding: 12px 35px;
+				background: var(--primary);
+				color: #fff;
+				border: none;
+				border-radius: 8px;
+				font-size: 16px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			.back-btn button:hover {
+				background: var(--secondary);
+				color: #333;
+			}
+
+			.footer {
+				background: var(--primary);
+				color: var(--light);
+				text-align: center;
+				padding: 30px 0;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container nav-container">
+				<div class="logo">非遗匠心</div>
+				<ul class="nav-menu">
+					<li><a href="非遗匠心·传统文化数字化展示平台.html">首页</a></li>
+					<li><a href="非遗项目展示.html">非遗展示</a></li>
+					<li><a href="数字展厅.html">数字展厅</a></li>
+					<li><a href="匠心传承.html">匠心传承</a></li>
+					<li><a href="新闻资讯.html">新闻资讯</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="header">
+			<div class="container">
+				<h1>非遗线上直播公开课</h1>
+				<p>国家级传承人在线授课 | 全网官方正版非遗课程 | 随时随地学习中华传统技艺</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<h2 class="section-title">精品非遗直播课程</h2>
+			<div class="course-grid">
+			
+				<!-- 1 京剧 -->
+				<div class="course-card">
+					<img src="img/尚长荣.webp" alt="京剧表演直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">京剧艺术直播课</h3>
+						<p class="course-card-teacher">国家级传承人：尚长荣</p>
+						<p class="course-card-text">国家大剧院官方课程，普及京剧基础表演知识、身段与唱腔，传承国粹艺术，零基础可学。</p>
+						<a href="https://www.ncpa-classic.com/" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 2 剪纸 -->
+				<div class="course-card">
+					<img src="img/段建珺.jpg" alt="剪纸直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">剪纸技艺直播课</h3>
+						<p class="course-card-teacher">国家级传承人：段建珺</p>
+						<p class="course-card-text">国家公共文化云非遗公开课，讲解剪纸技巧与吉祥纹样创作，体验民间传统剪纸艺术。</p>
+						<a href="https://www.culturedc.cn/feiyi.html" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 3 龙泉青瓷 -->
+				<div class="course-card">
+					<img src="img/徐朝兴.jpg" alt="龙泉青瓷直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">龙泉青瓷直播课</h3>
+						<p class="course-card-teacher">国家级传承人：徐朝兴</p>
+						<p class="course-card-text">中国非遗网官方课程，展示青瓷拉坯、修坯、上釉、烧制全流程，传承千年青瓷烧制技艺。</p>
+						<a href="https://www.ihchina.cn/study.html" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 4 书法 -->
+				<div class="course-card">
+					<img src="img/欧阳中石.webp" alt="书法直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">中国书法直播课</h3>
+						<p class="course-card-teacher">国家级传承人：欧阳中石</p>
+						<p class="course-card-text">学堂在线官方课程，系统讲授书法基础、笔画结构与章法，传承中国书法艺术。</p>
+						<a href="https://www.xuetangx.com/course/hubei05011001001" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 5 苏绣 -->
+				<div class="course-card">
+					<img src="img/姚建萍.webp" alt="苏绣直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">苏绣技艺直播课</h3>
+						<p class="course-card-teacher">国家级传承人：姚建萍</p>
+						<p class="course-card-text">非遗官方教学课程，教授苏绣基础针法与刺绣技巧，感受江南刺绣非遗文化。</p>
+						<a href="https://www.ihchina.cn/study.html" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 6 皮影戏 -->
+				<div class="course-card">
+					<img src="img/范正安.webp" alt="皮影戏直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">皮影戏表演直播课</h3>
+						<p class="course-card-teacher">国家级传承人：范正安</p>
+						<p class="course-card-text">国家公共文化云课程，教学皮影操纵、配音与表演技巧，体验传统光影非遗艺术。</p>
+						<a href="https://www.culturedc.cn/feiyi.html" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 7 昆曲 -->
+				<div class="course-card">
+					<img src="img/王芳.webp" alt="昆曲直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">昆曲艺术直播课</h3>
+						<p class="course-card-teacher">国家级传承人：王芳</p>
+						<p class="course-card-text">国家大剧院昆曲公开课，讲解昆曲唱腔、身段与经典选段，传承百戏之祖文化。</p>
+						<a href="https://www.ncpa-classic.com/" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 8 西湖龙井茶艺 -->
+				<div class="course-card">
+					<img src="img/樊生华.jpg" alt="西湖龙井直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">西湖龙井茶艺课</h3>
+						<p class="course-card-teacher">国家级传承人：樊生华</p>
+						<p class="course-card-text">非遗官方教学，展示龙井茶炒制、冲泡与品鉴技艺，传播中华传统茶文化。</p>
+						<a href="https://www.ihchina.cn/study.html" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 9 木版年画 -->
+				<div class="course-card">
+					<img src="img/杨洛书.png" alt="木版年画直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">木版年画直播课</h3>
+						<p class="course-card-teacher">国家级传承人：杨洛书</p>
+						<p class="course-card-text">国家公共文化云课程，教学年画雕刻、套色、印刷技艺，传承民间年画艺术。</p>
+						<a href="https://www.culturedc.cn/feiyi.html" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 10 中医针灸 -->
+				<div class="course-card">
+					<img src="img/石学敏.webp" alt="中医针灸直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">中医针灸养生课</h3>
+						<p class="course-card-teacher">国家级传承人：石学敏</p>
+						<p class="course-card-text">学堂在线中医药课程，讲解经络穴位与养生知识，传承中医非遗文化。</p>
+						<a href="https://www.xuetangx.com/course/huazhong08011001001" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 11 古琴 -->
+				<div class="course-card">
+					<img src="img/李祥霆.jpg" alt="古琴直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">古琴演奏直播课</h3>
+						<p class="course-card-teacher">国家级传承人：李祥霆</p>
+						<p class="course-card-text">中国非遗网官方课程，教学古琴指法与演奏技巧，传承千年古琴雅乐文化。</p>
+						<a href="https://www.ihchina.cn/study.html" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+				<!-- 12 醒狮 -->
+				<div class="course-card">
+					<img src="img/黄钦添.webp" alt="醒狮直播课">
+					<div class="course-card-body">
+						<h3 class="course-card-title">醒狮表演直播课</h3>
+						<p class="course-card-teacher">国家级传承人：黄钦添</p>
+						<p class="course-card-text">国家公共文化云非遗课程，教学醒狮步法与表演技巧，传承民俗醒狮文化。</p>
+						<a href="https://www.culturedc.cn/feiyi.html" target="_blank" class="course-card-btn">观看直播课</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<!-- 返回上一页 -->
+			<div class="back-btn">
+				<button onclick="history.back()">← 返回上一页</button>
+			</div>
+		</div>
+		
+
+		<footer class="footer">
+			<div class="container">
+				<p>非遗匠心·传统文化数字化展示平台 © 2026 版权所有</p>
+				<p>传承中华优秀传统文化 · 推动非遗数字化保护与传播</p>
+			</div>
+		</footer>
+	</body>
+</html>

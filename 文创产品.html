@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>非遗文创产品展示与推广 - 非遗匠心展示平台</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Microsoft YaHei", sans-serif;
+			}
+
+			:root {
+				--primary: #8B4513;
+				--secondary: #D2B48C;
+				--dark: #333;
+				--light: #fff;
+				--gray: #f5f5f5;
+			}
+
+			body {
+				line-height: 1.6;
+				color: var(--dark);
+				background: var(--gray);
+			}
+
+			.navbar {
+				background: var(--primary);
+				padding: 15px 0;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.container {
+				width: 90%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.nav-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				color: var(--light);
+				font-size: 24px;
+				font-weight: bold;
+			}
+
+			.nav-menu {
+				display: flex;
+				list-style: none;
+			}
+
+			.nav-menu li {
+				margin-left: 30px;
+			}
+
+			.nav-menu a {
+				color: var(--light);
+				text-decoration: none;
+				font-size: 16px;
+				transition: 0.3s;
+			}
+
+			.nav-menu a:hover {
+				color: var(--secondary);
+			}
+
+			.header {
+				padding: 60px 0;
+				text-align: center;
+				background: var(--light);
+			}
+
+			.header h1 {
+				font-size: 36px;
+				color: var(--primary);
+				margin-bottom: 15px;
+			}
+
+			.header p {
+				font-size: 18px;
+				color: #555;
+			}
+
+			.section-title {
+				text-align: center;
+				margin: 50px 0 30px;
+				font-size: 32px;
+				color: var(--primary);
+				position: relative;
+			}
+
+			.section-title::after {
+				content: '';
+				width: 80px;
+				height: 3px;
+				background: var(--secondary);
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.product-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+				gap: 30px;
+				margin-bottom: 50px;
+			}
+
+			.product-card {
+				background: var(--light);
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				transition: 0.3s;
+			}
+
+			.product-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.product-card img {
+				width: 100%;
+				height: 220px;
+				object-fit: cover;
+				display: block;
+			}
+
+			.product-card-body {
+				padding: 20px;
+			}
+
+			.product-card-title {
+				font-size: 18px;
+				color: var(--primary);
+				margin-bottom: 10px;
+                line-height: 1.4;
+			}
+
+			.product-card-price {
+				font-size: 20px;
+				color: #e74c3c;
+				font-weight: bold;
+				margin-bottom: 10px;
+			}
+
+			.product-card-text {
+				color: #666;
+				font-size: 14px;
+				margin-bottom: 15px;
+				line-height: 1.5;
+			}
+
+			.product-card-btn {
+				display: inline-block;
+				padding: 8px 15px;
+				background: var(--primary);
+				color: var(--light);
+				text-decoration: none;
+				border-radius: 5px;
+				font-size: 14px;
+				transition: 0.3s;
+                cursor: pointer;
+			}
+
+			.product-card-btn:hover {
+				background: #6d3510;
+			}
+			
+			/* 返回上一页按钮 */
+			.back-btn {
+				text-align: center;
+				margin: 20px 0 60px;
+			}
+			.back-btn button {
+				padding: 12px 35px;
+				background: var(--primary);
+				color: #fff;
+				border: none;
+				border-radius: 8px;
+				font-size: 16px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			.back-btn button:hover {
+				background: var(--secondary);
+				color: #333;
+			}
+
+			.footer {
+				background: var(--primary);
+				color: var(--light);
+				text-align: center;
+				padding: 30px 0;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container nav-container">
+				<div class="logo">非遗匠心</div>
+				<ul class="nav-menu">
+					<li><a href="非遗匠心·传统文化数字化展示平台.html">首页</a></li>
+					<li><a href="非遗项目展示.html">非遗展示</a></li>
+					<li><a href="数字展厅.html">数字展厅</a></li>
+					<li><a href="匠心传承.html">匠心传承</a></li>
+					<li><a href="新闻资讯.html">新闻资讯</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="header">
+			<div class="container">
+				<h1>非遗文创产品展示与推广</h1>
+				<p>让传统工艺融入现代生活，感受非遗文创的独特魅力</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<h2 class="section-title">12大非遗系列 · 精选文创</h2>
+			<div class="product-grid">
+				<!-- 1 京剧 -->
+				<div class="product-card">
+					<img src="img/京剧书签礼盒.jpg" alt="京剧脸谱书签">
+					<div class="product-card-body">
+						<h3 class="product-card-title">京剧脸谱金属书签礼盒</h3>
+						<p class="product-card-price">¥69.00</p>
+						<p class="product-card-text">非遗京剧文创，经典脸谱造型，金属镂空工艺，商务伴手礼首选。</p>
+						<a href="https://www.jd.com/chanpin/2635143.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 2 剪纸 -->
+				<div class="product-card">
+					<img src="img/手工剪纸窗花装饰套装.jpg" alt="剪纸窗花套装">
+					<div class="product-card-body">
+						<h3 class="product-card-title">手工剪纸窗花装饰套装</h3>
+						<p class="product-card-price">¥45.00</p>
+						<p class="product-card-text">纯手工剪纸非遗工艺，吉祥生肖图案，家居装饰、节日氛围好物。</p>
+						<a href="https://www.jd.com/chanpin/2563106.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 3 龙泉青瓷 -->
+				<div class="product-card">
+					<img src="img/龙泉青瓷手工主人杯.jpg" alt="龙泉青瓷茶杯">
+					<div class="product-card-body">
+						<h3 class="product-card-title">龙泉青瓷手工主人杯</h3>
+						<p class="product-card-price">¥198.00</p>
+						<p class="product-card-text">非遗龙泉青瓷，纯手工拉坯上釉，开片可养，茶道收藏级单品。</p>
+						<a href="https://mall.jd.com/index-10246726.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 4 书法 -->
+				<div class="product-card">
+					<img src="img/文房四宝书法练习套装.jpg" alt="宣纸书法套装">
+					<div class="product-card-body">
+						<h3 class="product-card-title">文房四宝书法练习套装</h3>
+						<p class="product-card-price">¥89.00</p>
+						<p class="product-card-text">非遗宣纸工艺，毛笔+墨汁+毛毡全套，入门书法学习专用。</p>
+						<a href="https://www.jd.com/chanpin/455694.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 5 苏绣 -->
+				<div class="product-card">
+					<img src="img/苏绣双面绣书签礼盒.avif" alt="苏绣书签">
+					<div class="product-card-body">
+						<h3 class="product-card-title">苏绣双面绣书签礼盒</h3>
+						<p class="product-card-price">¥158.00</p>
+						<p class="product-card-text">非遗苏绣手工刺绣，花鸟图案，国风文艺礼品，精致收藏。</p>
+						<a href="https://item.jd.com/10127695554040.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 6 皮影戏 -->
+				<div class="product-card">
+					<img src="img/皮影戏人物摆件礼盒.png" alt="皮影摆件">
+					<div class="product-card-body">
+						<h3 class="product-card-title">皮影戏人物摆件礼盒</h3>
+						<p class="product-card-price">¥79.00</p>
+						<p class="product-card-text">非遗皮影手工制作，可表演可装饰，传统文化儿童礼物。</p>
+						<a href="https://www.jd.com/chanpin/1494407.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 7 昆曲 -->
+				<div class="product-card">
+					<img src="img/昆曲牡丹亭文创笔记本.jpg" alt="昆曲文创笔记本">
+					<div class="product-card-body">
+						<h3 class="product-card-title">昆曲牡丹亭文创笔记本</h3>
+						<p class="product-card-price">¥59.00</p>
+						<p class="product-card-text">非遗昆曲IP，牡丹亭经典插画，文艺手账本、记事本。</p>
+						<a href="#" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 8 西湖龙井 -->
+				<div class="product-card">
+					<img src="img/西湖龙井非遗工艺绿茶.jpeg" alt="西湖龙井茶叶">
+					<div class="product-card-body">
+						<h3 class="product-card-title">西湖龙井非遗工艺绿茶</h3>
+						<p class="product-card-price">¥268.00</p>
+						<p class="product-card-text">非遗炒制工艺，明前龙井，礼盒装，送礼自饮皆宜。</p>
+						<a href="#" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 9 木版年画 -->
+				<div class="product-card">
+					<img src="img/木版年画门神手工印刷.jpg" alt="木版年画门神">
+					<div class="product-card-body">
+						<h3 class="product-card-title">木版年画门神手工印刷</h3>
+						<p class="product-card-price">¥55.00</p>
+						<p class="product-card-text">非遗木版年画，手工雕版套色印刷，传统门神镇宅装饰。</p>
+						<a href="https://item.jd.com/100045678901.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 10 中医针灸 -->
+				<div class="product-card">
+					<img src="img/非遗艾灸养生礼盒套装.avif" alt="艾灸礼盒">
+					<div class="product-card-body">
+						<h3 class="product-card-title">非遗艾灸养生礼盒套装</h3>
+						<p class="product-card-price">¥128.00</p>
+						<p class="product-card-text">中医非遗养生，陈年艾草+艾灸盒，家用祛湿散寒。</p>
+						<a href="https://item.jd.com/100076629260.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 11 古琴 -->
+				<div class="product-card">
+					<img src="img/古琴造型陶瓷香插.jpg" alt="古琴香插">
+					<div class="product-card-body">
+						<h3 class="product-card-title">古琴造型陶瓷香插</h3>
+						<p class="product-card-price">¥75.00</p>
+						<p class="product-card-text">非遗古琴文创，禅意香道摆件，线香底座，茶室文艺装饰。</p>
+						<a href="https://www.jd.com/hotitem/16724c09be0a30b57afb.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+				<!-- 12 醒狮 -->
+				<div class="product-card">
+					<img src="img/醒狮平安挂件车载摆件.jpg" alt="醒狮挂件">
+					<div class="product-card-body">
+						<h3 class="product-card-title">醒狮平安挂件车载摆件</h3>
+						<p class="product-card-price">¥66.00</p>
+						<p class="product-card-text">非遗醒狮文创，国潮吉祥寓意，汽车挂饰、家居平安摆件。</p>
+						<a href="https://www.jd.com/hprm/67288f74c32cd90c66f4.html" target="_blank" class="product-card-btn">立即购买</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<!-- 返回上一页 -->
+			<div class="back-btn">
+				<button onclick="history.back()">← 返回上一页</button>
+			</div>
+		</div>
+		
+
+		<footer class="footer">
+			<div class="container">
+				<p>非遗匠心·传统文化数字化展示平台 © 2026 版权所有</p>
+				<p>传承中华优秀传统文化 · 推动非遗数字化保护与传播</p>
+			</div>
+		</footer>
+	</body>
+</html>

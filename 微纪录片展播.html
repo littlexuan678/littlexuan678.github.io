@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>非遗微纪录片展播 - 非遗匠心展示平台</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Microsoft YaHei", sans-serif;
+			}
+
+			:root {
+				--primary: #8B4513;
+				--secondary: #D2B48C;
+				--dark: #333;
+				--light: #fff;
+				--gray: #f5f5f5;
+			}
+
+			body {
+				line-height: 1.6;
+				color: var(--dark);
+				background: var(--gray);
+			}
+
+			.navbar {
+				background: var(--primary);
+				padding: 15px 0;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.container {
+				width: 90%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.nav-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				color: var(--light);
+				font-size: 24px;
+				font-weight: bold;
+			}
+
+			.nav-menu {
+				display: flex;
+				list-style: none;
+			}
+
+			.nav-menu li {
+				margin-left: 30px;
+			}
+
+			.nav-menu a {
+				color: var(--light);
+				text-decoration: none;
+				font-size: 16px;
+				transition: 0.3s;
+			}
+
+			.nav-menu a:hover {
+				color: var(--secondary);
+			}
+
+			.header {
+				padding: 60px 0;
+				text-align: center;
+				background: var(--light);
+			}
+
+			.header h1 {
+				font-size: 36px;
+				color: var(--primary);
+				margin-bottom: 15px;
+			}
+
+			.header p {
+				font-size: 18px;
+				color: #555;
+			}
+
+			.section-title {
+				text-align: center;
+				margin: 50px 0 30px;
+				font-size: 32px;
+				color: var(--primary);
+				position: relative;
+			}
+
+			.section-title::after {
+				content: '';
+				width: 80px;
+				height: 3px;
+				background: var(--secondary);
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.video-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+				gap: 30px;
+				margin-bottom: 50px;
+			}
+
+			/* 跳转卡片样式 */
+			.video-card {
+				background: var(--light);
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				transition: 0.3s;
+				text-decoration: none;
+				color: inherit;
+				display: block;
+				cursor: pointer;
+			}
+
+			.video-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.video-cover {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				display: block;
+			}
+
+			.video-card-body {
+				padding: 20px;
+			}
+
+			.video-card-title {
+				font-size: 18px;
+				color: var(--primary);
+				margin-bottom: 10px;
+			}
+
+			.video-card-text {
+				color: #666;
+				font-size: 14px;
+			}
+
+			/* 返回上一页按钮 */
+			.back-btn {
+				text-align: center;
+				margin: 20px 0 60px;
+			}
+			.back-btn button {
+				padding: 12px 35px;
+				background: var(--primary);
+				color: #fff;
+				border: none;
+				border-radius: 8px;
+				font-size: 16px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			.back-btn button:hover {
+				background: var(--secondary);
+				color: #333;
+			}
+
+			.footer {
+				background: var(--primary);
+				color: var(--light);
+				text-align: center;
+				padding: 30px 0;
+				margin-top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container nav-container">
+				<div class="logo">非遗匠心</div>
+				<ul class="nav-menu">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="非遗项目展示.html">非遗展示</a></li>
+					<li><a href="数字展厅.html">数字展厅</a></li>
+					<li><a href="匠心传承.html">匠心传承</a></li>
+					<li><a href="新闻资讯.html">新闻资讯</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="header">
+			<div class="container">
+				<h1>非遗微纪录片展播</h1>
+				<p>深入记录非遗传承人的故事，展现匠心精神与文化传承</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<h2 class="section-title">非遗传承微纪录片</h2>
+			<div class="video-grid">
+				<!-- 1 -->
+				<a href="https://www.bilibili.com/video/BV19HHVzwEsH?t=3.6" target="_blank" class="video-card">
+					<img src="img/非遗剪纸.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《匠心》：一位剪纸匠人的坚守</h3>
+						<p class="video-card-text">本片记录了国家级非遗传承人王师傅的日常生活与创作，展现了他对剪纸艺术的热爱与执着。</p>
+					</div>
+				</a>
+				<!-- 2 -->
+				<a href="hhttps://db.workercn.cn/media/2026/03/16/3658989B7E5E42359D28662621698647/preview.mp4" target="_blank" class="video-card">
+					<img src="img/非遗陶艺.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《传承》：陶艺世家的百年故事</h3>
+						<p class="video-card-text">讲述了一个陶艺世家三代人传承技艺的故事，见证了传统工艺在现代社会的创新与发展。</p>
+					</div>
+				</a>
+				<!-- 3 -->
+				<a href="https://www.bilibili.com/video/BV1EC8SzwEC5?t=3.2="_blank" class="video-card">
+					<img src="img/非遗书法.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《墨韵》：书法大师的艺术人生</h3>
+						<p class="video-card-text">跟随著名书法家，了解他的艺术生涯和对中国书法的深刻理解。</p>
+					</div>
+				</a>
+				<!-- 4 -->
+				<a href="https://www.bilibili.com/video/BV1YhZNBSERS?t=15.7" target="_blank" class="video-card">
+					<img src="img/非遗苏绣.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《针尖上的芭蕾》：苏绣传承故事</h3>
+						<p class="video-card-text">记录苏绣传承人的成长历程，展现苏绣技艺的精湛与美丽。</p>
+					</div>
+				</a>
+				<!-- 5 -->
+				<a href="https://www.bilibili.com/video/BV1eFGZeGEtY?t=1.6" target="_blank" class="video-card">
+					<img src="img/非遗皮影戏.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《光影传奇》：皮影戏的前世今生</h3>
+						<p class="video-card-text">探寻皮影戏的起源与发展，记录当代皮影戏传承人的创新实践。</p>
+					</div>
+				</a>
+				<!-- 6 -->
+				<a href="https://www.bilibili.com/video/BV1Ns8oztEhx?t=3.7" target="_blank" class="video-card">
+					<img src="img/非遗昆曲.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《昆曲雅韵》：百年昆曲的传承之路</h3>
+						<p class="video-card-text">讲述昆曲从兴盛到传承的曲折历程，展现当代昆曲人的坚守与努力。</p>
+					</div>
+				</a>
+				<!-- 7 -->
+				<a href="https://www.bilibili.com/video/BV1KBvWeZEQo?t=2.2" target="_blank" class="video-card">
+					<img src="img/非遗茶艺.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《茶香四溢》：传统茶艺的文化传承</h3>
+						<p class="video-card-text">跟随茶艺大师，了解中国茶文化的深厚底蕴和传承故事。</p>
+					</div>
+				</a>
+				<!-- 8 -->
+				<a href="https://www.bilibili.com/video/BV1SmqoBTEpY?t=8.1" target="_blank" class="video-card">
+					<img src="img/非遗年画.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《年画里的中国》：木版年画的故事</h3>
+						<p class="video-card-text">记录木版年画的制作工艺和文化内涵，展现民间艺术的独特魅力。</p>
+					</div>
+				</a>
+				<!-- 9 -->
+				<a href="https://www.bilibili.com/video/BV1QLCmBfEQi?t=5.8" target="_blank" class="video-card">
+					<img src="img/非遗针灸.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《银针济世》：中医针灸的传承</h3>
+						<p class="video-card-text">讲述中医针灸的传承故事，展现中医文化的博大精深。</p>
+					</div>
+				</a>
+				<!-- 10 -->
+				<a href="https://www.bilibili.com/video/BV1qA411V7jo?t=27.9" target="_blank" class="video-card">
+					<img src="img/非遗古琴.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《琴音千年》：古琴艺术的传承</h3>
+						<p class="video-card-text">探寻古琴艺术的历史渊源，记录当代古琴传承人的艺术追求。</p>
+					</div>
+				</a>
+				<!-- 11 -->
+				<a href="https://tv.cctv.com/2021/05/04/VIDEK1hGMPxCsYejaSowyhQx210504.shtml" target="_blank" class="video-card">
+					<img src="img/非遗舞龙舞狮.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《龙腾狮跃》：舞龙舞狮的传承</h3>
+						<p class="video-card-text">记录舞龙舞狮的传承故事，展现民间节庆文化的活力与魅力。</p>
+					</div>
+				</a>
+				<!-- 12 -->
+				<a href="https://www.bilibili.com/video/BV1zy4y1J7vN?t=8.0" target="_blank" class="video-card">
+					<img src="img/非遗京剧.png" class="video-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《京剧人生》：京剧演员的艺术之路</h3>
+						<p class="video-card-text">跟随京剧演员，了解他们的学艺历程和对京剧艺术的热爱。</p>
+					</div>
+				</a>
+			</div>
+
+			<!-- 返回上一页 -->
+			<div class="back-btn">
+				<button onclick="history.back()">← 返回上一页</button>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>非遗匠心·传统文化数字化展示平台 © 2026 版权所有</p>
+				<p>传承中华优秀传统文化 · 推动非遗数字化保护与传播</p>
+			</div>
+		</footer>
+	</body>
+</html>

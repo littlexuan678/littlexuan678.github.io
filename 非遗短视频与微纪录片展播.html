@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>非遗短视频与微纪录片展播 - 非遗匠心展示平台</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Microsoft YaHei", sans-serif;
+			}
+
+			:root {
+				--primary: #8B4513;
+				--secondary: #D2B48C;
+				--dark: #333;
+				--light: #fff;
+				--gray: #f5f5f5;
+			}
+
+			body {
+				line-height: 1.6;
+				color: var(--dark);
+				background: var(--gray);
+			}
+
+			.navbar {
+				background: var(--primary);
+				padding: 15px 0;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.container {
+				width: 90%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.nav-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				color: var(--light);
+				font-size: 24px;
+				font-weight: bold;
+			}
+
+			.nav-menu {
+				display: flex;
+				list-style: none;
+			}
+
+			.nav-menu li {
+				margin-left: 30px;
+			}
+
+			.nav-menu a {
+				color: var(--light);
+				text-decoration: none;
+				font-size: 16px;
+				transition: 0.3s;
+			}
+
+			.nav-menu a:hover {
+				color: var(--secondary);
+			}
+
+			.header {
+				padding: 60px 0;
+				text-align: center;
+				background: var(--light);
+			}
+
+			.header h1 {
+				font-size: 36px;
+				color: var(--primary);
+				margin-bottom: 15px;
+			}
+
+			.header p {
+				font-size: 18px;
+				color: #555;
+			}
+
+			.section-title {
+				text-align: center;
+				margin: 50px 0 30px;
+				font-size: 32px;
+				color: var(--primary);
+				position: relative;
+			}
+
+			.section-title::after {
+				content: '';
+				width: 80px;
+				height: 3px;
+				background: var(--secondary);
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.video-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+				gap: 30px;
+				margin-bottom: 50px;
+			}
+
+			.video-card {
+				background: var(--light);
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				transition: 0.3s;
+			}
+
+			.video-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.video-card video {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				display: block;
+			}
+
+			.video-card-body {
+				padding: 20px;
+			}
+
+			.video-card-title {
+				font-size: 18px;
+				color: var(--primary);
+				margin-bottom: 10px;
+			}
+
+			.video-card-text {
+				color: #666;
+				font-size: 14px;
+			}
+
+			/* 微纪录片跳转卡片样式 */
+			.doc-card {
+				background: var(--light);
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				transition: 0.3s;
+				cursor: pointer;
+				text-decoration: none;
+				color: inherit;
+				display: block;
+			}
+			.doc-card:hover {
+				transform: translateY(-5px);
+			}
+			.doc-cover {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				display: block;
+			}
+
+			/* 查看更多按钮样式 */
+			.more-btn {
+				text-align: center;
+				margin: -20px 0 50px;
+			}
+			.more-btn a {
+				display: inline-block;
+				padding: 10px 25px;
+				background: var(--primary);
+				color: #fff;
+				text-decoration: none;
+				border-radius: 8px;
+				font-size: 15px;
+				transition: 0.3s;
+			}
+			.more-btn a:hover {
+				background: var(--secondary);
+				color: #333;
+			}
+
+			/* 返回上一页按钮 */
+			.back-btn {
+				text-align: center;
+				margin: 0 auto 50px;
+			}
+			.back-btn button {
+				padding: 12px 30px;
+				background: var(--primary);
+				color: #fff;
+				border: none;
+				border-radius: 8px;
+				font-size: 16px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			.back-btn button:hover {
+				background: var(--secondary);
+				color: #333;
+			}
+
+			.footer {
+				background: var(--primary);
+				color: var(--light);
+				text-align: center;
+				padding: 30px 0;
+				margin-top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container nav-container">
+				<div class="logo">非遗匠心</div>
+				<ul class="nav-menu">
+					<li><a href="非遗匠心·传统文化数字化展示平台.html">首页</a></li>
+					<li><a href="非遗项目展示.html">非遗展示</a></li>
+					<li><a href="数字展厅.html">数字展厅</a></li>
+					<li><a href="匠心传承.html">匠心传承</a></li>
+					<li><a href="新闻资讯.html">新闻资讯</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="header">
+			<div class="container">
+				<h1>非遗短视频与微纪录片展播</h1>
+				<p>用镜头记录非遗之美，让传统文化生动起来</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<h2 class="section-title">非遗短视频</h2>
+			<div class="video-grid">
+				<div class="video-card">
+					<video controls poster="">
+					    <source src="img/京剧毽子功.mp4" type="video/mp4">
+					</video>
+					<div class="video-card-body">
+					    <h3 class="video-card-title">京剧·毽子功</h3>
+					    <p class="video-card-text">成都戏曲慕课：分步骤拆解京剧毽子功基础练习，详解侧手翻、毽子并腿、倒立灌腿等动作诀窍与完整训练方法，助力掌握核心技巧。</p>
+					</div>
+				</div>
+				<div class="video-card">
+					<video controls poster="">
+						<source src="img/蔚县剪纸技艺.mp4" type="video/mp4">
+					</video>
+					<div class="video-card-body">
+						<h3 class="video-card-title">蔚县剪纸技艺</h3>
+						<p class="video-card-text">传承自明代的北方民间艺术瑰宝，视频快速呈现从设计到成品的全流程——以白描定形、精密切刻、手工染色为核心，串联20余种精细工序，直观展现“刻剪结合、色彩绚丽”的非遗匠心。</p>
+					</div>
+				</div>
+				<div class="video-card">
+					<video controls poster="">
+					    <source src="img/景德镇拉坯技艺.mp4" type="video/mp4">
+					</video>
+					<div class="video-card-body">
+					    <h3 class="video-card-title">景德镇拉坯技艺</h3>
+					    <p class="video-card-text">以第一视角沉浸式呈现景德镇陶艺核心流程，从揉泥排气、转盘拉坯塑形到精细修坯打磨，完整展现传统技艺的手部巧思与器物成型的匠心过程，视觉体验极具感染力。</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- 短视频查看更多 -->
+			<div class="more-btn">
+				<a href="短视频展播.html">查看更多非遗短视频 →</a>
+			</div>
+
+			<h2 class="section-title">非遗微纪录片</h2>
+			<div class="video-grid">
+				<!-- 微纪录片改为跳转链接 -->
+				<a href="https://www.bilibili.com/video/BV19HHVzwEsH?t=3.6" target="_blank" class="doc-card">
+					<img src="img/非遗剪纸.png" class="doc-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《匠心》：一位剪纸匠人的坚守</h3>
+						<p class="video-card-text">本片记录了国家级非遗传承人王师傅的日常生活与创作，展现了他对剪纸艺术的热爱与执着。</p>
+					</div>
+				</a>
+				
+				<a href="https://db.workercn.cn/media/2026/03/16/3658989B7E5E42359D28662621698647/preview.mp4" target="_blank" class="doc-card">
+					<img src="img/非遗陶艺.png" class="doc-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《传承》：陶艺世家的百年故事</h3>
+						<p class="video-card-text">讲述了一个陶艺世家三代人传承技艺的故事，见证了传统工艺在现代社会的创新与发展。</p>
+					</div>
+				</a>
+				
+				<a href="https://www.bilibili.com/video/BV1zy4y1J7vN?t=8.0" target="_blank" class="doc-card">
+					<img src="img/非遗剪纸.png" class="doc-cover">
+					<div class="video-card-body">
+						<h3 class="video-card-title">《国粹》：京剧艺术的新生</h3>
+						<p class="video-card-text">探访京剧传承基地，记录老艺人授艺、青年演员练功的日常，展现国粹艺术在新时代的传承与焕新。</p>
+					</div>
+				</a>
+			</div>
+
+			<!-- 微纪录片查看更多 -->
+			<div class="more-btn">
+				<a href="微纪录片展播.html">查看更多非遗微纪录片 →</a>
+			</div>
+			
+			<!-- 返回上一页 -->
+			<div class="back-btn">
+				<button onclick="history.back()">← 返回上一页</button>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>非遗匠心·传统文化数字化展示平台 © 2026 版权所有</p>
+				<p>传承中华优秀传统文化 · 推动非遗数字化保护与传播</p>
+			</div>
+		</footer>
+
+		<!-- 同一时间只播放一个视频 -->
+		<script>
+			const videos = document.querySelectorAll('video');
+			let currentVideo = null;
+			videos.forEach(video => {
+				video.addEventListener('play', () => {
+					if(currentVideo && currentVideo !== video){
+						currentVideo.pause();
+					}
+					currentVideo = video;
+				});
+			});
+		</script>
+	</body>
+</html>

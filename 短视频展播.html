@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>非遗短视频展播 - 非遗匠心展示平台</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Microsoft YaHei", sans-serif;
+			}
+
+			:root {
+				--primary: #8B4513;
+				--secondary: #D2B48C;
+				--dark: #333;
+				--light: #fff;
+				--gray: #f5f5f5;
+			}
+
+			body {
+				line-height: 1.6;
+				color: var(--dark);
+				background: var(--gray);
+			}
+
+			.navbar {
+				background: var(--primary);
+				padding: 15px 0;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.container {
+				width: 90%;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.nav-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				color: var(--light);
+				font-size: 24px;
+				font-weight: bold;
+			}
+
+			.nav-menu {
+				display: flex;
+				list-style: none;
+			}
+
+			.nav-menu li {
+				margin-left: 30px;
+			}
+
+			.nav-menu a {
+				color: var(--light);
+				text-decoration: none;
+				font-size: 16px;
+				transition: 0.3s;
+			}
+
+			.nav-menu a:hover {
+				color: var(--secondary);
+			}
+
+			.header {
+				padding: 60px 0;
+				text-align: center;
+				background: var(--light);
+			}
+
+			.header h1 {
+				font-size: 36px;
+				color: var(--primary);
+				margin-bottom: 15px;
+			}
+
+			.header p {
+				font-size: 18px;
+				color: #555;
+			}
+
+			.section-title {
+				text-align: center;
+				margin: 50px 0 30px;
+				font-size: 32px;
+				color: var(--primary);
+				position: relative;
+			}
+
+			.section-title::after {
+				content: '';
+				width: 80px;
+				height: 3px;
+				background: var(--secondary);
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.video-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+				gap: 30px;
+				margin-bottom: 50px;
+			}
+
+			.video-card {
+				background: var(--light);
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				transition: 0.3s;
+			}
+
+			.video-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.video-card video {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				display: block;
+			}
+
+			.video-card-body {
+				padding: 20px;
+			}
+
+			.video-card-title {
+				font-size: 18px;
+				color: var(--primary);
+				margin-bottom: 10px;
+			}
+
+			.video-card-text {
+				color: #666;
+				font-size: 14px;
+			}
+			
+			/* 返回上一页按钮 */
+			.back-btn {
+				text-align: center;
+				margin: 20px 0 60px;
+			}
+			.back-btn button {
+				padding: 12px 35px;
+				background: var(--primary);
+				color: #fff;
+				border: none;
+				border-radius: 8px;
+				font-size: 16px;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+			.back-btn button:hover {
+				background: var(--secondary);
+				color: #333;
+			}
+
+			.footer {
+				background: var(--primary);
+				color: var(--light);
+				text-align: center;
+				padding: 30px 0;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container nav-container">
+				<div class="logo">非遗匠心</div>
+				<ul class="nav-menu">
+					<li><a href="非遗匠心·传统文化数字化展示平台.html">首页</a></li>
+					<li><a href="非遗项目展示.html">非遗展示</a></li>
+					<li><a href="数字展厅.html">数字展厅</a></li>
+					<li><a href="匠心传承.html">匠心传承</a></li>
+					<li><a href="新闻资讯.html">新闻资讯</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="header">
+			<div class="container">
+				<h1>非遗短视频展播</h1>
+				<p>用镜头记录非遗之美，让传统文化生动起来</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<h2 class="section-title">非遗技艺短视频</h2>
+			<div class="video-grid">
+				<div class="video-card">
+				    <video controls poster="">
+				        <source src="img/京剧毽子功.mp4" type="video/mp4">
+				    </video>
+				    <div class="video-card-body">
+				        <h3 class="video-card-title">京剧·毽子功</h3>
+				        <p class="video-card-text">成都戏曲慕课：分步骤拆解京剧毽子功基础练习，详解侧手翻、毽子并腿、倒立灌腿等动作诀窍与完整训练方法，助力掌握核心技巧。</p>
+				    </div>
+				</div>
+				<div class="video-card">
+					<video controls poster="">
+						<source src="img/蔚县剪纸技艺.mp4" type="video/mp4">
+					</video>
+					<div class="video-card-body">
+						<h3 class="video-card-title">蔚县剪纸技艺</h3>
+						<p class="video-card-text">传承自明代的北方民间艺术瑰宝，视频快速呈现从设计到成品的全流程——以白描定形、精密切刻、手工染色为核心，串联20余种精细工序，直观展现“刻剪结合、色彩绚丽”的非遗匠心。</p>
+					</div>
+				</div>
+				<div class="video-card">
+				    <video controls poster="">
+				        <source src="img/景德镇拉坯技艺.mp4" type="video/mp4">
+				    </video>
+				    <div class="video-card-body">
+				        <h3 class="video-card-title">景德镇拉坯技艺</h3>
+				        <p class="video-card-text">以第一视角沉浸式呈现景德镇陶艺核心流程，从揉泥排气、转盘拉坯塑形到精细修坯打磨，完整展现传统技艺的手部巧思与器物成型的匠心过程，视觉体验极具感染力。</p>
+				    </div>
+				</div>
+				<div class="video-card">
+					<video controls poster="">
+						<source src="img/中国书法名家教学.mp4" type="video/mp4">
+					</video>
+					<div class="video-card-body">
+						<h3 class="video-card-title">中国书法名家教学</h3>
+						<p class="video-card-text">涵盖书法历史脉络与五大书体特点，详解王羲之、颜真卿等名家风格，聚焦执笔姿势、笔墨运用及构图技巧。</p>
+					</div>
+				</div>
+				<div class="video-card">
+				    <video controls poster="">
+				        <source src="img/苏绣针法教程.mp4" type="video/mp4">
+				    </video>
+				    <div class="video-card-body">
+				        <h3 class="video-card-title">苏绣针法教程</h3>
+				        <p class="video-card-text">专业绣坊实操演示，详解平针、套针、齐针等苏绣基础针法，步骤拆解清晰、操作要点明确，新手可快速上手掌握核心技法。</p>
+				    </div>
+				</div>
+				<div class="video-card">
+				    <video controls poster="">
+				        <source src="img/皮影制作技艺流程.mp4" type="video/mp4">
+				    </video>
+				    <div class="video-card-body">
+				        <h3 class="video-card-title">皮影制作技艺流程</h3>
+				        <p class="video-card-text">详细展示皮影制作的八大核心工序：选皮、制皮（净皮/灰皮工艺）、画稿、过稿与镂刻（阴刻/阳刻等技法）、敷彩、发汗熨平、坠截（关节枢纽处理）、装操纵杆，完整呈现传统皮影从原料到成品的匠心打造过程。</p>
+				    </div>
+				</div>
+				<div class="video-card">
+					<video controls poster="">
+						<source src="img/昆曲·闺门旦的水袖.mp4" type="video/mp4">
+					</video>
+					<div class="video-card-body">
+						<h3 class="video-card-title">昆曲·闺门旦的水袖</h3>
+						<p class="video-card-text">专门讲授昆曲中闺门旦的水袖技巧，包括抖袖、挑袖、飞舞等动作及其表达的情感。</p>
+					</div>
+				</div>
+				<div class="video-card">
+					<video controls poster="">
+						<source src="img/宋代点茶技艺.mp4" type="video/mp4">
+					</video>
+					<div class="video-card-body">
+						<h3 class="video-card-title">宋代点茶技艺</h3>
+						<p class="video-card-text">展示使用茶筅击拂茶汤，使茶末与水交融，形成绵密泡沫的过程，画面优雅。</p>
+					</div>
+				</div>
+				<div class="video-card">
+					<video controls poster="img/木版年画印制技艺.png">
+						<source src="img/木版年画印制技艺.mp4" type="video/mp4">
+					</video>
+					<div class="video-card-body">
+						<h3 class="video-card-title">木版年画印制技艺</h3>
+						<p class="video-card-text">展示朱仙镇或杨家埠木版年画的画稿、刻版、套色印刷等核心步骤。</p>
+					</div>
+				</div>
+				<div class="video-card">
+				    <video controls poster="">
+				        <source src="img/针灸操作技术解析.mp4" type="video/mp4">
+				    </video>
+				    <div class="video-card-body">
+				        <h3 class="video-card-title">孙氏岐黄针法·针灸技艺解析</h3>
+				        <p class="video-card-text">聚焦津晋两地非遗孙氏岐黄针法，详解火针烧制、快速进针等核心操作，追溯山西祖籍传承脉络，呈现捻绿豆练手感、按压练力道的传统修习方法，同步探讨非遗传承面临的现实困境。</p>
+				    </div>
+				</div>
+				<div class="video-card">
+					<video controls poster="">
+						<source src="img/戴晓莲古琴教学.mp4" type="video/mp4">
+					</video>
+					<div class="video-card-body">
+						<h3 class="video-card-title">戴晓莲古琴教学</h3>
+						<p class="video-card-text">名家主讲，讲解泛音练习、散音练习、基本指法等古琴技艺入门知识。</p>
+					</div>
+				</div>
+				<div class="video-card">
+				    <video controls poster="">
+				        <source src="img/舞龙动作分解教学.mp4" type="video/mp4">
+				    </video>
+				    <div class="video-card-body">
+				        <h3 class="video-card-title">舞龙动作分解教学</h3>
+				        <p class="video-card-text">详解龙头方向把控、龙珠转动技巧、后踢腿标准步法等核心要点，演示“胸前花”“玉龙旋转”等基础动作，搭配名称解说与实操示范，助力快速掌握舞龙基础技能。</p>
+				    </div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 返回上一页 -->
+			<div class="back-btn">
+				<button onclick="history.back()">← 返回上一页</button>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>非遗匠心·传统文化数字化展示平台 © 2026 版权所有</p>
+				<p>传承中华优秀传统文化 · 推动非遗数字化保护与传播</p>
+			</div>
+		</footer>
+
+		<!-- 核心：同一时间只播放一个视频 -->
+		<script>
+			const videos = document.querySelectorAll('video');
+			let currentVideo = null;
+
+			videos.forEach(video => {
+				video.addEventListener('play', () => {
+					if(currentVideo && currentVideo !== video){
+						currentVideo.pause();
+					}
+					currentVideo = video;
+				});
+			});
+		</script>
+	</body>
+</html>
